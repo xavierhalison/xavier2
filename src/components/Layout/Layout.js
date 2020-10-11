@@ -6,7 +6,7 @@ function Layout({ children }) {
   return (
     <>
       <GlobalStyle />
-      <LayoutWrapper theme="dark">
+      <LayoutWrapper theme="light">
         <Container>{children}</Container>
       </LayoutWrapper>
     </>

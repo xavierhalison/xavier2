@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { Container, MainTitle, SecondaryTitle} from "../DefaultComponents";
+import { Container, MainTitle, SecondaryTitle, AboutText } from "../DefaultComponents";
 
 import { LIGHT_COLOR_PALETE, DARK_COLOR_PALETE } from "../../constants";
 
@@ -16,30 +16,40 @@ export const GlobalStyle = createGlobalStyle`
 
 export const LayoutWrapper = styled.div`
   height: 100vh;
-  background-color: #20363d;
+  background-color: ${(props) =>
+      props.theme === "light"
+        ? LIGHT_COLOR_PALETE.COLOR1
+        : DARK_COLOR_PALETE.COLOR1};
   display: flex;
   justify-content: center;
-  padding: 10px 0 30px;
+  padding: 30px 0 50px;
 
   ${Container} {
     background-color: ${(props) =>
       props.theme === "light"
-        ? LIGHT_COLOR_PALETE.TERCIARY
-        : DARK_COLOR_PALETE.TERCIARY};
+        ? LIGHT_COLOR_PALETE.COLOR2
+        : DARK_COLOR_PALETE.COLOR2};
   }
 
   ${MainTitle} {
     color: ${(props) =>
       props.theme === "light"
-        ? LIGHT_COLOR_PALETE.PRIMARY
-        : DARK_COLOR_PALETE.PRIMARY};
+        ? LIGHT_COLOR_PALETE.COLOR3
+        : DARK_COLOR_PALETE.COLOR3};
   }
 
   ${SecondaryTitle} {
     color: ${(props) =>
       props.theme === "light"
-        ? LIGHT_COLOR_PALETE.SECONDARY
-        : DARK_COLOR_PALETE.SECONDARY};
+        ? LIGHT_COLOR_PALETE.COLOR4
+        : DARK_COLOR_PALETE.COLOR4};
+  }
+
+  ${AboutText} {
+    color: ${(props) =>
+      props.theme === "light"
+        ? LIGHT_COLOR_PALETE.COLOR4
+        : DARK_COLOR_PALETE.COLOR4};
   }
 `;
 
