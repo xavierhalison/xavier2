@@ -16,6 +16,9 @@ jobs:
           name: "Install dependencies"
           command: sudo npm install
       - run: 
+          name: "React build"
+          command: npm run build
+      - run: 
           name: "Deploy to Firebase"
           command: firebase deploy
 
