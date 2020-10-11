@@ -1,5 +1,10 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { Container, MainTitle, SecondaryTitle, AboutText } from "../DefaultComponents";
+import {
+  Container,
+  MainTitle,
+  SecondaryTitle,
+  AboutText,
+} from "../DefaultComponents";
 
 import { LIGHT_COLOR_PALETE, DARK_COLOR_PALETE } from "../../constants";
 
@@ -16,19 +21,29 @@ export const GlobalStyle = createGlobalStyle`
 
 export const LayoutWrapper = styled.div`
   height: 100vh;
-  background-color: ${(props) =>
-      props.theme === "light"
-        ? LIGHT_COLOR_PALETE.COLOR1
-        : DARK_COLOR_PALETE.COLOR1};
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 30px 0 50px;
+  
+  background-color: ${(props) =>
+    props.theme === "light"
+      ? LIGHT_COLOR_PALETE.COLOR1
+      : DARK_COLOR_PALETE.COLOR1};
 
   ${Container} {
     background-color: ${(props) =>
       props.theme === "light"
         ? LIGHT_COLOR_PALETE.COLOR2
         : DARK_COLOR_PALETE.COLOR2};
+
+    .theme-switcher__option {
+      color: ${(props) =>
+        props.theme === "light"
+          ? LIGHT_COLOR_PALETE.COLOR4
+          : DARK_COLOR_PALETE.COLOR4};
+    }
   }
 
   ${MainTitle} {
