@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
+import Layout from "./components/Layout/Layout"
+import { MainTitle, SecondaryTitle } from "./components/DefaultComponents";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Halison Xavier</h1>
-    </div>
+    <Layout>
+      <MainTitle>Halison Patrick Xavier</MainTitle>
+      <SecondaryTitle>Desenvolvedor Web Front-end</SecondaryTitle>
+    </Layout>
   );
 }
 

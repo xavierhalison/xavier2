@@ -1,0 +1,11 @@
+export const DARK_COLOR_PALETE = {
+  PRIMARY: "#FFFFFF",
+  SECONDARY: "#00F49B",
+  TERCIARY: "#000000",
+};
+
+export const LIGHT_COLOR_PALETE = {
+  PRIMARY: "#20363D",
+  SECONDARY: "#FF0033",
+  TERCIARY: "#FFFFFF",
+};
