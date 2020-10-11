@@ -23,6 +23,10 @@ jobs:
       - run: 
           name: "Deploy to Firebase"
           command: firebase deploy
+      - persist_to_workspace:
+          root: /tmp/dir
+          paths:
+            - build/*
 
 # Orchestrate our job run sequence
 workflows:
