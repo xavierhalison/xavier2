@@ -1,28 +1,34 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import { GlobalStyle, LayoutWrapper } from "./LayoutStyled";
-import { Container } from "../DefaultComponents";
+import { Container } from "../Container";
+import { ThemeSwitcher } from "../ThemeSwitcher";
+import Brightness2Icon from "@material-ui/icons/Brightness2";
+import Brightness5Icon from "@material-ui/icons/Brightness5";
 
 function Layout({ children }) {
-  const [theme, setTheme] = useState("light")
-
-  function toggleTheme() {
-    theme === "light" ? setTheme("dark") : setTheme("light")
-  }
-
-  useEffect(() => {
-    
-  }, [theme])
+  const [theme, toggleTheme] = useState("light");
 
   return (
     <>
       <GlobalStyle />
+      
       <LayoutWrapper theme={theme}>
         <Container>
-          <div className="theme-switcher">
-            <span className="theme-switcher__option" onClick={() => toggleTheme()}>
-              {theme === "light" ? "dark" : "light"}
-            </span>
-          </div>
+          
+          <ThemeSwitcher>
+            {theme === "light" ? (
+              <Brightness2Icon
+                onClick={() => toggleTheme("dark")}
+                className="option"
+              />
+            ) : (
+              <Brightness5Icon
+                onClick={() => toggleTheme("light")}
+                className="option"
+              />
+            )}
+          </ThemeSwitcher>
+
           {children}
         </Container>
       </LayoutWrapper>

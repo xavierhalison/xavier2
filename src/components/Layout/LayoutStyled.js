@@ -1,12 +1,13 @@
+// STYLED
 import styled, { createGlobalStyle } from "styled-components";
-import {
-  Container,
-  MainTitle,
-  SecondaryTitle,
-  AboutText,
-} from "../DefaultComponents";
 
-import { LIGHT_COLOR_PALETE, DARK_COLOR_PALETE } from "../../constants";
+//COMPONENTS
+import { Container } from "../Container";
+import { ThemeSwitcher } from "../ThemeSwitcher";
+import { MainTitle, SecondaryTitle, AboutText } from "../DefaultComponents";
+
+//THEMING OBJECT
+import { theming } from "../../constants";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -26,45 +27,28 @@ export const LayoutWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 30px 0 50px;
-  
-  background-color: ${(props) =>
-    props.theme === "light"
-      ? LIGHT_COLOR_PALETE.COLOR1
-      : DARK_COLOR_PALETE.COLOR1};
 
-  ${Container} {
-    background-color: ${(props) =>
-      props.theme === "light"
-        ? LIGHT_COLOR_PALETE.COLOR2
-        : DARK_COLOR_PALETE.COLOR2};
-
-    .theme-switcher__option {
-      color: ${(props) =>
-        props.theme === "light"
-          ? LIGHT_COLOR_PALETE.COLOR4
-          : DARK_COLOR_PALETE.COLOR4};
-    }
-  }
+  background-color: ${(props) => theming.mainBgColor[props.theme]};
 
   ${MainTitle} {
-    color: ${(props) =>
-      props.theme === "light"
-        ? LIGHT_COLOR_PALETE.COLOR3
-        : DARK_COLOR_PALETE.COLOR3};
+    color: ${(props) => theming.title1Color[props.theme]};
+  }
+
+  ${Container} {
+    background-color: ${(props) => theming.containerBgColor[props.theme]};
+    box-shadow: 4px 4px 1px ${(props) => theming.containerShadow[props.theme]};
   }
 
   ${SecondaryTitle} {
-    color: ${(props) =>
-      props.theme === "light"
-        ? LIGHT_COLOR_PALETE.COLOR4
-        : DARK_COLOR_PALETE.COLOR4};
+    color: ${(props) => theming.title2Color[props.theme]};
   }
 
   ${AboutText} {
-    color: ${(props) =>
-      props.theme === "light"
-        ? LIGHT_COLOR_PALETE.COLOR4
-        : DARK_COLOR_PALETE.COLOR4};
+    color: ${(props) => theming.commomText[props.theme]};
+  }
+
+  ${ThemeSwitcher} {
+    color: ${(props) => theming.themeSwitcherColor[props.theme]};
   }
 `;
 
