@@ -6,15 +6,17 @@ import Brightness2Icon from "@material-ui/icons/Brightness2";
 import Brightness5Icon from "@material-ui/icons/Brightness5";
 
 function Layout({ children }) {
-  const [theme, toggleTheme] = useState("light");
+  const currentHour = new Date().getHours();
+  const defaultTheme = currentHour > 5 && currentHour <= 17 ? "light" : "dark";
+
+  const [theme, toggleTheme] = useState(defaultTheme);
 
   return (
     <>
       <GlobalStyle />
-      
+
       <LayoutWrapper theme={theme}>
         <Container>
-          
           <ThemeSwitcher>
             {theme === "light" ? (
               <Brightness2Icon
