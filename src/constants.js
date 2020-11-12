@@ -40,5 +40,17 @@ export const theming = {
   themeSwitcherColor: {
     light: LIGHT_COLOR_PALETE.COLOR3,
     dark: DARK_COLOR_PALETE.COLOR3,
+  },
+  buttonBgColor: {
+    light: LIGHT_COLOR_PALETE.COLOR2,
+    dark: DARK_COLOR_PALETE.COLOR2,
+  },
+  buttonShadow: {
+    light: LIGHT_COLOR_PALETE.COLOR3,
+    dark: DARK_COLOR_PALETE.COLOR3,
+  },
+  buttonTextBorder: {
+    light: LIGHT_COLOR_PALETE.COLOR3,
+    dark: DARK_COLOR_PALETE.COLOR3,
   }
 };

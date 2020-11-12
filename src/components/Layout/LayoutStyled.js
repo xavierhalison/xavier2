@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 //COMPONENTS
 import { Container } from "../Container";
 import { ThemeSwitcher } from "../ThemeSwitcher";
-import { MainTitle, SecondaryTitle, AboutText } from "../DefaultComponents";
+import { MainTitle, SecondaryTitle, AboutText, MainButton } from "../DefaultComponents";
 
 //THEMING OBJECT
 import { theming } from "../../constants";
@@ -49,6 +49,13 @@ export const LayoutWrapper = styled.div`
 
   ${ThemeSwitcher} {
     color: ${(props) => theming.themeSwitcherColor[props.theme]};
+  }
+
+  ${MainButton} {
+    background-color: ${(props) => theming.buttonBgColor[props.theme]};
+    box-shadow: 0px 2px 1px ${(props) => theming.buttonShadow[props.theme]};
+    color: ${(props) => theming.buttonTextBorder[props.theme]};
+    border: 1px solid ${(props) => theming.buttonTextBorder[props.theme]};
   }
 `;
 
